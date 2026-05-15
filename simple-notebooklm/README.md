@@ -4,12 +4,6 @@ Một project RAG học tập dựa trên PDF, dựng lại theo tài liệu `Bu
 Hệ thống hỗ trợ hỏi đáp có trích dẫn, tóm tắt, tạo quiz, tạo flashcards, REST API, CLI,
 Streamlit UI và scaffold đánh giá Ragas/chunking/reranking.
 
-Tài liệu chi tiết cho người mới nằm ở:
-
-- `docs/RUN_TERMINAL_GUIDE.md`: hướng dẫn chạy Terminal với `bai_giang.pdf`, test tính năng và bật lại sau khi tắt máy.
-- `docs/USER_GUIDE_REQUIREMENTS.md`: requirements, cài đặt, chạy, sử dụng, xem kết quả và giải thích output.
-- `docs/PROJECT_REPORT.md`: báo cáo dạng paper và kịch bản thuyết trình.
-
 ## Cài đặt
 
 ```bash
