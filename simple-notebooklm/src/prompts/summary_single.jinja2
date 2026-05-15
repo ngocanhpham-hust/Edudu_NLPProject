@@ -1,0 +1,12 @@
+Tóm tắt các nguồn sau thành JSON hợp lệ, không thêm markdown.
+Schema:
+{
+  "summary": "bản tóm tắt ngắn gọn",
+  "key_points": ["ý chính 1", "ý chính 2"]
+}
+
+Nguồn:
+{% for chunk in chunks %}
+[S{{ loop.index }}] {{ chunk.metadata.filename }} - trang {{ chunk.metadata.page }}
+{{ chunk.text }}
+{% endfor %}

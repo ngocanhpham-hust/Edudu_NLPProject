@@ -1,0 +1,22 @@
+Tạo {{ count }} flashcards từ nguồn bên dưới.
+Chỉ trả về JSON hợp lệ, không thêm markdown.
+source_markers chỉ được dùng các marker có trong nguồn.
+
+Schema:
+{
+  "cards": [
+    {
+      "front": "mặt trước",
+      "back": "mặt sau",
+      "hint": "gợi ý ngắn",
+      "topic": "chủ đề",
+      "source_markers": ["S1"]
+    }
+  ]
+}
+
+Nguồn:
+{% for chunk in chunks %}
+[S{{ loop.index }}] {{ chunk.metadata.filename }} - trang {{ chunk.metadata.page }}
+{{ chunk.text }}
+{% endfor %}
