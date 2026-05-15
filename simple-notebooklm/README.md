@@ -58,7 +58,7 @@ Chạy API trước, rồi mở Streamlit:
 streamlit run src/interfaces/ui.py
 ```
 
-## Ghi chú cải tiến
+## Ghi chú
 
 - Có backend `echo` để debug retrieval/prompt khi chưa cấu hình LLM.
 - Parser JSON tự bóc code fence và tìm JSON object/array trong output của LLM.
