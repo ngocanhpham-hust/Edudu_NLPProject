@@ -1,0 +1,121 @@
+question,answer,relevant_pages,relevant_chunk_ids,question_type
+What are the main course goals of the NLP introduction slides?,"The course goals are to learn basic NLP principles, learn techniques and tools for practical robust NLP systems, and gain insight into open research problems in natural language.",1a_introduction.pdf:2,,factual
+What is the target of NLP according to the introduction slide?,The target of NLP is to understand languages by mapping text to meaning.,1a_introduction.pdf:5,,definition
+Why is NLP not simply text matching or keyword matching?,"NLP aims to understand language meaning, so it must go beyond matching surface words or keywords.",1a_introduction.pdf:5,,explanation
+Name some applications of NLP mentioned in the introduction slides.,"The slides mention applications such as sentiment analysis, event detection, summarization, information extraction, machine translation, question answering, and dialogue systems.",1a_introduction.pdf:23,,factual
+What does morphology study in NLP?,"Morphology studies how words are constructed, including prefixes and suffixes.",1a_introduction.pdf:24,,definition
+What does syntax analyze in NLP?,Syntax analyzes structural relationships between words.,1a_introduction.pdf:24,,definition
+What does semantics concern in NLP?,"Semantics concerns the meanings of words, phrases, and sentences.",1a_introduction.pdf:24,,definition
+What is the purpose of word segmentation in the NLP introduction slides?,Word segmentation chooses the correct segmentation among multiple possible word boundary analyses of a sentence.,1a_introduction.pdf:26,,definition
+What information is added in the English POS tagging example 'The boy threw a ball to the brown dog'?,"Each word is assigned a POS tag, such as DT for determiner, NN for noun, VBD for past-tense verb, IN for preposition, and JJ for adjective.",1a_introduction.pdf:27,,factual
+What is an example of structural ambiguity from the introduction slides?,The sentence 'I saw the man on the hill with a telescope' is structurally ambiguous because the attachment of the prepositional phrases can vary.,1a_introduction.pdf:31,,definition
+What examples show lexical ambiguity in the introduction slides?,"Examples include 'bank' meaning a river bank or a financial institution, 'bug' meaning a device or an insect, and 'work' meaning job or function.",1a_introduction.pdf:35,,factual
+What are two characteristics of NLP listed near the end of the introduction slides?,NLP is ambiguous at all levels and involves reasoning about the world.,1a_introduction.pdf:45,,definition
+What does a language model compute?,A language model computes the probability of a sentence or sequence of words in a language.,1b_language modelling.pdf:2,,definition
+What should a good language model prefer?,A good language model should assign higher probability to grammatically correct and fluent sentences than to random word orders.,1b_language modelling.pdf:2,,factual
+What is the goal of an n-gram language model?,The goal is to compute the probability of a sentence or word sequence using conditional probabilities over words.,1b_language modelling.pdf:3,,definition
+Why is the Markov assumption used in n-gram language modeling?,"It is impossible to store all full-history probabilities, so the Markov assumption approximates a word as depending only on the previous n minus 1 words.",1b_language modelling.pdf:4,,explanation
+What is a unigram language model?,A unigram model approximates a sentence probability as the product of individual word probabilities without context.,1b_language modelling.pdf:5,,definition
+What is a bigram language model?,A bigram model approximates sentence probability as the product of probabilities of each word conditioned on the previous word.,1b_language modelling.pdf:5,,definition
+How is a bigram probability estimated with maximum likelihood?,"It is estimated as count(w_{i-1}, w_i) divided by count(w_{i-1}).",1b_language modelling.pdf:6,,explanation
+Why do language modeling implementations use log space?,They use log space to avoid numerical underflow and to replace multiplication with addition.,1b_language modelling.pdf:14,,explanation
+Name two language modeling toolkits or resources mentioned in the slides.,The slides mention Google Book N-grams and KenLM.,1b_language modelling.pdf:15,,factual
+What does extrinsic evaluation of n-gram models do?,"Extrinsic evaluation compares models by putting each model inside an external task such as spelling correction, speech recognition, or machine translation.",1b_language modelling.pdf:20,,definition
+What is intrinsic evaluation for language models based on?,Intrinsic evaluation commonly uses perplexity to evaluate how well a model predicts test data.,1b_language modelling.pdf:21,,definition
+What is perplexity in language modeling?,Perplexity is the inverse probability of the test set normalized by the number of words; minimizing perplexity is equivalent to maximizing probability.,1b_language modelling.pdf:23,,definition
+What is the purpose of word segmentation?,It determines word boundaries in a sentence and removes ambiguity in word boundaries.,2_wordsegmentation.pdf:2,,definition
+Why is word segmentation important for Vietnamese and other monosyllable languages?,"It is important because words in monosyllable languages such as Chinese, Japanese, Thai, and Vietnamese can contain one or more syllables, making word boundaries ambiguous.",2_wordsegmentation.pdf:2,,explanation
+What are two possible segmentations of 'Bún chả ngon' in the slides?,"It can be segmented as 'Bún / chả ngon' meaning rice noodle is not delicious, or 'Bún_chả / ngon' meaning rice noodle with grilled meat rolls is delicious.",2_wordsegmentation.pdf:3,,definition
+What ambiguity is shown by the sentence 'Quyết định liều tiêm cho trẻ 5-11 tuổi'?,"It can mean deciding the dose for children aged 5-11, or a risky decision/injection interpretation depending on segmentation.",2_wordsegmentation.pdf:4,,factual
+"According to the Vietlex statistics, what proportion of Vietnamese dictionary words have two syllables?",About 70.72 percent of the words in the Vietlex dictionary are two-syllable compound words.,2_wordsegmentation.pdf:6,,factual
+What is a single word in Vietnamese word structure?,"A single word consists of one syllable, such as tôi, bác, người, cây, hoa, đi, or chạy.",2_wordsegmentation.pdf:7,,definition
+What is a compound word in Vietnamese word structure?,"A compound word consists of several semantically related syllables, such as coordinated or main-support compounds.",2_wordsegmentation.pdf:7,,definition
+What kinds of expressions are considered lexical units in Vietnamese word segmentation?,"Multi-word expressions, proper names, and regular patterns such as numbers and time can be considered lexical units.",2_wordsegmentation.pdf:9,,factual
+What are the main approaches to word segmentation in the slides?,"The main approaches are dictionary-based approaches, machine learning-based approaches, and combinations of these methods.",2_wordsegmentation.pdf:10,,factual
+What is the idea of the longest word matching algorithm?,"It greedily parses from left to right or right to left, taking the longest possible word until no syllables remain.",2_wordsegmentation.pdf:11,,definition
+What are advantages and disadvantages of the longest matching algorithm?,"It is simple, has reasonable complexity, and requires no training data, but it depends on the dictionary and does not resolve ambiguity well.",2_wordsegmentation.pdf:13,,comparison
+What does the graph-based ambiguity resolution approach represent?,It represents the input string as a sequence of syllables and builds a linear directed graph to model possible word segmentations.,2_wordsegmentation.pdf:22,,definition
+What is POS tagging?,POS tagging assigns each word in a sentence an appropriate part-of-speech tag.,3_POS.pdf:2,,definition
+What are the input and output of POS tagging?,"The input is a string of words plus a tagset, and the output is the best tag for each word.",3_POS.pdf:2,,definition
+Why is POS tagging useful?,"It is useful for applications such as text-to-speech, parsing, speech recognition, and information retrieval, and it makes parsing easier.",3_POS.pdf:3,,explanation
+What is the approximate current performance of POS tagging and its baseline?,"POS tagging performance is about 97 percent, while the simple baseline is already about 90 percent.",3_POS.pdf:4,,definition
+What is the difference between closed class and open class words?,"Closed class words are relatively fixed function words such as prepositions, articles, conjunctions, pronouns, and auxiliaries; open class words are content words such as nouns, verbs, adjectives, and adverbs.",3_POS.pdf:5,,comparison
+What are the three common English POS tagset sizes mentioned?,"The slides mention the 45-tag Penn Treebank tagset, the 61-tag British National Corpus tagset, and the 146-tag C7 tagset.",3_POS.pdf:7,,definition
+Why is POS tagging difficult in English?,"Although roughly 85 percent of word types are unambiguous, the remaining 15 percent are very common and require contextual disambiguation.",3_POS.pdf:12,,explanation
+What are the main types of POS taggers mentioned?,"The slides mention stochastic taggers such as maximum likelihood and HMM tagging, and rule-based tagging.",3_POS.pdf:13,,factual
+What does a Hidden Markov Model POS tagger choose?,It chooses the tag sequence that maximizes P(word|tag) times P(tag|previous n tags).,3_POS.pdf:15,,definition
+What simplifying assumption is used in HMM tagging?,"The tagging problem can be approximated by looking only at nearby words and tags, such as the previous tag in a bigram model.",3_POS.pdf:17,,factual
+How does beam search find a POS tag path?,"At each step, it keeps the k best tagging combinations and recomputes probabilities when tagging the next word.",3_POS.pdf:29,,explanation
+What is transformation-based tagging?,Transformation-based tagging starts with broad initial tags and then applies learned narrower rules over several passes to refine the tags.,3_POS.pdf:36,,definition
+What is a dependency grammar?,A dependency grammar represents syntactic structure as lexical items linked by binary asymmetrical head-dependent relations called dependencies.,5c_Dependency Parsing.pdf:5,,definition
+What does the dependency label nsubj mean?,"nsubj means nominal subject, the subject relation in a dependency parse.",5c_Dependency Parsing.pdf:7,,definition
+Name three dependency labels described in the slides.,"Examples include nsubj for nominal subject, dobj for direct object, nmod for nominal modifier, amod for adjectival modifier, nummod for numeric modifier, and case.",5c_Dependency Parsing.pdf:7,,factual
+How can dependency parsing support relation extraction?,"Dependency parsing can help build a knowledge base by extracting relations such as (Apple, launched, iPhone 8) from sentences.",5c_Dependency Parsing.pdf:9,,explanation
+How is a dependency parse represented as a graph?,"It is represented as a graph G = (V, A), where vertices are usually words and arcs are ordered head-dependent relations.",5c_Dependency Parsing.pdf:11,,explanation
+What does the single-head property require in dependency parsing?,It requires that a dependent node cannot have two different heads.,5c_Dependency Parsing.pdf:12,,definition
+What does projective mean in dependency parsing?,Projective means that there are no crossing dependencies in the dependency graph.,5c_Dependency Parsing.pdf:13,,definition
+What is the main idea of transition-based dependency parsing?,"It reads a sentence from left to right and lets a model choose transitions such as SHIFT, REDUCE, LEFT-ARC, and RIGHT-ARC to build dependencies.",5c_Dependency Parsing.pdf:16,,definition
+What are the components of the Nivre parser configuration?,"A Nivre parser configuration contains a stack for partially processed tokens, a buffer for unread tokens, and a set A for dependency relations found so far.",5c_Dependency Parsing.pdf:18,,factual
+What are the four transitions in the Nivre algorithm?,"The four transitions are SHIFT, RIGHT-ARC, LEFT-ARC, and REDUCE.",5c_Dependency Parsing.pdf:19,,definition
+What is the goal of graph-based dependency parsing?,"The goal is to find the highest scoring dependency tree for a sentence, often by mapping parsing to a maximum spanning tree problem.",5c_Dependency Parsing.pdf:54,,definition
+What is lexical semantics?,Lexical semantics studies systematic meaning-related connections among lexemes and selectional restrictions inside individual lexemes.,7_lexicalsemantics.pdf:2,,definition
+What is homonymy?,"Homonymy is when words share a form but have unrelated and distinct meanings, such as bank as a financial institution and bank as sloping land.",7_lexicalsemantics.pdf:4,,definition
+Why does homonymy cause problems for NLP applications?,"It creates ambiguity in tasks such as information retrieval, machine translation, and text-to-speech.",7_lexicalsemantics.pdf:5,,explanation
+What is polysemy?,"Polysemy is when a word has multiple related meanings, such as bank as a financial institution and the building of that institution.",7_lexicalsemantics.pdf:6,,definition
+What is systematic polysemy or metonymy?,"It is a systematic relationship between senses, such as school or hospital meaning either an organization or a building.",7_lexicalsemantics.pdf:7,,definition
+What are synonyms?,Synonyms are words that have the same meaning in some or all contexts and can sometimes be substituted for each other.,7_lexicalsemantics.pdf:8,,definition
+Why is synonymy a relation between senses rather than words?,"Because words like big and large may be synonymous in one sense but not in another, such as 'big sister' versus 'large sister'.",7_lexicalsemantics.pdf:10,,explanation
+What are antonyms?,"Antonyms are senses that are opposites with respect to one feature of meaning, such as dark/light, short/long, or rise/fall.",7_lexicalsemantics.pdf:11,,definition
+What is the difference between hyponymy and hypernymy?,"A hyponym is a more specific subclass sense such as car under vehicle, while a hypernym is the more general superclass such as vehicle over car.",7_lexicalsemantics.pdf:12,,comparison
+What is WordNet?,"WordNet is a lexical database inspired by theories of human lexical memory that organizes lexical items and relationships across nouns, verbs, adjectives, and adverbs.",7_lexicalsemantics.pdf:14,,definition
+What features can be used for word sense disambiguation?,"WSD can use features such as target and neighboring POS tags, surrounding context words, punctuation, capitalization, partial parsing, thematic roles, and collocations.",7_lexicalsemantics.pdf:38,,factual
+What is a major morphological challenge in machine translation?,"A major challenge is capturing variation among languages, such as isolating languages with one morpheme per word versus polysynthetic languages where one word can express a whole sentence.",11_machinetranslation.pdf:3,,definition
+What syntactic challenge in MT is shown by English and Vietnamese word order?,"English and Vietnamese may order heads and modifiers differently, such as 'the red flag' versus 'lá cờ đỏ ấy'.",11_machinetranslation.pdf:4,,factual
+What are the three main blocks in machine translation?,"The three main blocks are language understanding, source-target language mapping information, and language generation.",11_machinetranslation.pdf:6,,factual
+What kinds of ambiguity must language understanding handle in MT?,"It must handle lexical ambiguity, syntactic ambiguity, and semantic ambiguity.",11_machinetranslation.pdf:7,,factual
+What are the main methods of machine translation shown in the abstraction diagram?,"The methods are direct approach, transfer approach, and interlingua approach, ranging from low to high abstraction.",11_machinetranslation.pdf:8,,factual
+How does statistical machine translation frame translation?,It treats translation as a noisy channel problem and searches for the target sentence that maximizes the translation model and language model probabilities.,11_machinetranslation.pdf:13,,explanation
+What are the necessities of a statistical MT system?,"A statistical MT system needs a language model, a translation model, and a search procedure.",11_machinetranslation.pdf:15,,factual
+Why is alignment needed in statistical MT?,Alignment is needed because a simple one-English-word to one-French-word mapping is unrealistic; the number of words in two sentences may differ.,11_machinetranslation.pdf:16,,explanation
+Name several sentence alignment methods mentioned in the MT slides.,"The slides mention character-length based, word-length based, cognate-based, dictionary-based, and word-distance based alignment methods.",11_machinetranslation.pdf:25,,factual
+What operations are used in the syntax-based translation model?,"The syntax-based model preprocesses English with a parser and uses probabilistic operations to reorder child nodes, insert extra nodes, and translate leaf words.",11_machinetranslation.pdf:45,,factual
+What is text summarization?,Text summarization automatically generates a summary of an input document or multiple documents.,12_summarisation_v1.pdf:2,,definition
+Name some applications of text summarization.,"Applications include headlines, meeting minutes, movie previews, reviews, TV digests, biographies, weather or stock bulletins, and histories.",12_summarisation_v1.pdf:3,,factual
+What are the main dimensions of text summarization in the slides?,"The main dimensions are input type, purpose, and output type, including single-document versus multi-document, generic/domain-specific/query-based, and extractive versus abstractive.",12_summarisation_v1.pdf:4,,factual
+What is extractive summarization?,Extractive summarization selects key sentences or phrases directly from the original text to form a summary.,12_summarisation_v1.pdf:6,,definition
+What is abstractive summarization based on sequence-to-sequence models?,"It maps an input document sequence to an output summary sequence using models such as RNNs, LSTMs, or Transformers with mechanisms like attention.",12_summarisation_v1.pdf:7,,definition
+What do topic representation approaches do in summarization?,They identify the main topics of the text and score sentences by how well they represent those topics.,12_summarisation_v1.pdf:11,,definition
+What is centroid-based summarization?,It computes a centroid vector representing the central meaning of a document or document cluster and selects sentences most similar to that centroid.,12_summarisation_v1.pdf:12,,definition
+How do TextRank and LexRank represent sentences?,"They represent each sentence as a node; TextRank creates edges based on word co-occurrence, while LexRank uses cosine similarity of TF-IDF vectors.",12_summarisation_v1.pdf:14,,factual
+What is Maximal Marginal Relevance used for in summarization?,MMR greedily selects sentences by balancing relevance to the main topic with dissimilarity to already selected sentences.,12_summarisation_v1.pdf:21,,definition
+What does ROUGE measure in summarization evaluation?,"ROUGE compares generated summaries with reference summaries using overlap of n-grams, word sequences, or word pairs.",12_summarisation_v1.pdf:23,,definition
+What is the target of a question answering system?,The target is to build a system that can answer human questions automatically in natural language.,13_Question Answering.pdf:3,,definition
+What sources can a QA system use?,"A QA system can use text passages, web documents, knowledge bases, databases, and available Q&A sets.",13_Question Answering.pdf:3,,factual
+What are the main tasks in QA shown with the TREC examples?,"The main tasks are intent detection or classification, named entity recognition or slot filling, information retrieval, and answer generation.",13_Question Answering.pdf:4,,factual
+What does answer type prediction do in QA systems?,It labels questions with answer types based on a taxonomy or classifies them using models such as maximum entropy models.,13_Question Answering.pdf:7,,definition
+What does the keyword selection algorithm select?,"It selects items such as non-stopwords in quotations, NNP words in named entities, complex nominals, nouns with adjectival modifiers, verbs, and the answer type word.",13_Question Answering.pdf:9,,definition
+What is SQuAD?,"SQuAD is a Stanford machine reading comprehension dataset with over 100,000 annotated passage-question-answer triples from English Wikipedia.",13_Question Answering.pdf:10,,definition
+How is SQuAD evaluated?,"SQuAD uses Exact Match and F1, comparing predicted answers against gold answers after normalization and taking the maximum score across acceptable answers.",13_Question Answering.pdf:11,,explanation
+What embeddings does BiDAF use for reading comprehension?,"BiDAF uses a concatenation of word embeddings such as GloVe and character embeddings from CNNs, followed by bidirectional LSTMs for context and query embeddings.",13_Question Answering.pdf:14,,factual
+How does BERT formulate reading comprehension answers?,"BERT treats the question as Segment A and the passage as Segment B, then predicts the start and end endpoints of the answer span in Segment B.",13_Question Answering.pdf:22,,explanation
+What is the limitation of a bi-encoder in retrieval?,A bi-encoder is fast but less accurate because it compares pre-encoded vectors with cosine similarity and does not fully capture complex query-document interactions.,13_Question Answering.pdf:40,,definition
+What is the grading policy for the NLP course?,The provided documents do not provide enough information.,,,unanswerable
+Who is the current teaching assistant for this course?,The provided documents do not provide enough information.,,,unanswerable
+What is the deadline for the final NLP project submission?,The provided documents do not provide enough information.,,,unanswerable
+Which classroom is assigned for the next NLP lecture?,The provided documents do not provide enough information.,,,unanswerable
+What is the instructor email address for office-hour booking?,The provided documents do not provide enough information.,,,unanswerable
+How many students enrolled in the course this semester?,The provided documents do not provide enough information.,,,unanswerable
+What is the password for the course LMS page?,The provided documents do not provide enough information.,,,unanswerable
+Which GPU model is installed on the course server?,The provided documents do not provide enough information.,,,unanswerable
+What is the exact date of the midterm exam?,The provided documents do not provide enough information.,,,unanswerable
+What is the attendance requirement for passing the course?,The provided documents do not provide enough information.,,,unanswerable
+Which textbook chapters are mandatory reading for week 12?,The provided documents do not provide enough information.,,,unanswerable
+What is the personal phone number of the lecturer?,The provided documents do not provide enough information.,,,unanswerable
+What is the budget for the NLP course project?,The provided documents do not provide enough information.,,,unanswerable
+Which students are assigned to each project group?,The provided documents do not provide enough information.,,,unanswerable
+What is the exact rubric score for the final presentation?,The provided documents do not provide enough information.,,,unanswerable
+What software license does the university require for the demo?,The provided documents do not provide enough information.,,,unanswerable
+What is the Wi-Fi password in the lecture room?,The provided documents do not provide enough information.,,,unanswerable
+Which paper must be reviewed for the bonus assignment?,The provided documents do not provide enough information.,,,unanswerable
+What is the Zoom link for the next online class?,The provided documents do not provide enough information.,,,unanswerable
+What is the final exam seat number for each student?,The provided documents do not provide enough information.,,,unanswerable

@@ -1,0 +1,6 @@
+case_type,detection_rate,false_positive_rate,citation_coverage,citation_validity,invalid_citation_detected,missing_citation_detected,false_positive
+valid citation,0.0,0.0,1.0,1.0,0.0,0.0,0.0
+missing citation,1.0,0.0,0.0,0.0,1.0,1.0,0.0
+invalid citation,1.0,0.0,1.0,0.0,1.0,0.0,0.0
+malformed citation,1.0,0.0,0.0,0.0,1.0,1.0,0.0
+citation not in context,1.0,0.0,1.0,0.0,1.0,0.0,0.0

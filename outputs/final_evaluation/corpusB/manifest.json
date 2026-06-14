@@ -1,0 +1,32 @@
+{
+  "corpus": {
+    "name": "corpusB",
+    "role": "long-document robustness corpus",
+    "pdf_paths": [
+      "data/DL_LectureNotes.pdf"
+    ],
+    "benchmark_path": "benchmarks/corpusB_benchmark.csv",
+    "output_dir": "outputs/final_evaluation/corpusB"
+  },
+  "role": "long-document robustness corpus",
+  "num_questions_total": 35,
+  "num_questions_retrieval": 35,
+  "question_type_counts": {
+    "explanation": 10,
+    "factual": 10,
+    "definition": 9,
+    "comparison": 5,
+    "multi-hop": 1
+  },
+  "num_chunks_default": 190,
+  "avg_chunk_length_default": 300.88947368421054,
+  "index_time_sec_default": 10.003362499999998,
+  "full_ablation_suite": false,
+  "generation_ran": false,
+  "generation_limit": 0,
+  "notes": [
+    "Retrieval and ablation metrics use answerable questions with gold sources.",
+    "Unanswerable questions are reserved for generation answerability evaluation.",
+    "Corpus B is used for long-document robustness insight, especially chunking."
+  ]
+}
